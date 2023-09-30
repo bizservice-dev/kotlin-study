@@ -1,4 +1,6 @@
-package iron
+package iron.example3
+
+import iron.Example
 
 /**
  * 다음 함수를 커리한 함수로 반환하라

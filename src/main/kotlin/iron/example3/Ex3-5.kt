@@ -1,4 +1,6 @@
-package iron
+package iron.example3
+
+import iron.Example
 
 /**
  * 다형적 compose 함수를 작성하라

@@ -1,4 +1,6 @@
-package iron
+package iron.example3
+
+import iron.Example
 
 /**
  * (A, B)에서 C로 가는 함수를 커리한 함수로 바꾸는 함수를 작성하라

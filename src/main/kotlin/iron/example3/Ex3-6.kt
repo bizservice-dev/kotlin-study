@@ -1,4 +1,6 @@
-package iron
+package iron.example3
+
+import iron.Example
 
 /**
  * 함수를 합성하되 적용 순서가 반대인 higherAndThen 함수를 정의하라.

@@ -1,4 +1,4 @@
-package iron
+package iron.example3
 
 /**
  * 인자를 두 개 받는 fun 함수를 작성하라. 이 함수의 두 번째 인자는 인자를 두 개 받는 커리한 함수이고

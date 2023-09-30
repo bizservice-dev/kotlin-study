@@ -1,4 +1,6 @@
-package iron
+package iron.example3
+
+import iron.Example
 
 /**
  * 두 함수를 합성하는 함수 값을 만들라. 예를들어 3.2.8절 예제에서 봤던 square와 triple을

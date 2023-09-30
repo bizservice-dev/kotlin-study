@@ -1,4 +1,6 @@
-package iron
+package iron.example3
+
+import iron.Example
 
 /**
  * compose 함수를 타입 파라미터를 사용하는 다형적 함수로 만들라.

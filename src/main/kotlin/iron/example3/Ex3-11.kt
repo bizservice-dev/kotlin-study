@@ -1,4 +1,4 @@
-package iron
+package iron.example3
 
 /**
  * 커리한 함수의 두 인자의 순서를 뒤바꾼 새로운 함수를 반환하는 fun 함수를 작성하라

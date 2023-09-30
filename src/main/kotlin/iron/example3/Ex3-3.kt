@@ -1,9 +1,13 @@
-package iron
+package iron.example3
+
+import iron.Example
+
 
 /**
  * 두 Int 값을 더하는 함수를 작성하라
  */
 typealias IntBinOp = (Int) -> (Int) -> Int
+
 
 class `Ex3-3` : Example {
 

@@ -1,4 +1,6 @@
-package iron
+package iron.example3
+
+import iron.Example
 
 /**
  * Int에서 Int로 가는 함수의 합성을 허용하는 compose 함수를 작성하라 (fun을 사용해 정의하라)
