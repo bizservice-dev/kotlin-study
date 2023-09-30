@@ -1,40 +1,41 @@
 package ellie
 
+
 // 연습문제 3-1
-fun compose(f: (Int) -> Int, g: (Int) -> Int): (Int) -> Int = { f(g(it)) }
+private fun compose(f: (Int) -> Int, g: (Int) -> Int): (Int) -> Int = { f(g(it)) }
 
 // 연습문제 3-2
-fun <I, O, T> genericCompose(f: (T) -> O, g: (I) -> T): (I) -> O = { f(g(it)) }
+private fun <I, O, T> genericCompose(f: (T) -> O, g: (I) -> T): (I) -> O = { f(g(it)) }
 
 // 연습문제 3-3
-val add: (Int) -> (Int) -> Int = { val1 -> { val2 -> val1 + val2 } }
+private val add: (Int) -> (Int) -> Int = { val1 -> { val2 -> val1 + val2 } }
 
 // 연습문제 3-4
 typealias IntFunction = (Int) -> Int
-val curriedCompose: (IntFunction) -> (IntFunction) -> IntFunction = { f -> { g -> { x -> f(g(x)) } } }
+private val curriedCompose: (IntFunction) -> (IntFunction) -> IntFunction = { f -> { g -> { x -> f(g(x)) } } }
 
 // 연습문제 3-5
-fun <I, O, T> genericCurriedCompose(): ((T) -> O) -> ((I) -> T) -> (I) -> O = { f -> { g -> { x -> f(g(x)) } } }
+private fun <I, O, T> genericCurriedCompose(): ((T) -> O) -> ((I) -> T) -> (I) -> O = { f -> { g -> { x -> f(g(x)) } } }
 
 // 연습문제 3-6
-fun <I, O, T> genericCurriedComposeReverse(): ((I) -> T) -> ((T) -> O) -> (I) -> O = { f -> { g -> { x -> g(f(x)) } } }
+private fun <I, O, T> genericCurriedComposeReverse(): ((I) -> T) -> ((T) -> O) -> (I) -> O = { f -> { g -> { x -> g(f(x)) } } }
 
 // 연습문제 3-7
-fun <T, U, V> partialCurriedFunction(v: V, f: (V) -> (T) -> U): (T) -> U = f(v)
+private fun <T, U, V> partialCurriedFunction(v: V, f: (V) -> (T) -> U): (T) -> U = f(v)
 
 // 연습문제 3-8
-fun <T, U, V> partialCurriedFunction2(v: V, f: (T) -> (V) -> U): (T) -> U = { x -> f(x)(v) }
+private fun <T, U, V> partialCurriedFunction2(v: V, f: (T) -> (V) -> U): (T) -> U = { x -> f(x)(v) }
 
 // 연습문제 3-9
-fun <A, B, C, D> func(a: A, b: B, c: C, d: D): String = "$a, $b, $c, $d"
-fun <A, B, C, D> curriedFunc(): (A) -> (B) -> (C) -> (D) -> String =
+private fun <A, B, C, D> func(a: A, b: B, c: C, d: D): String = "$a, $b, $c, $d"
+private fun <A, B, C, D> curriedFunc(): (A) -> (B) -> (C) -> (D) -> String =
     { a -> { b -> { c -> { d -> "$a, $b, $c, $d" } } } }
 
 // 연습문제 3-10
-fun <A, B, C> convertToCurried(f: (A, B) -> C): (A) -> (B) -> C = { a -> { b -> f(a, b) } }
+private fun <A, B, C> convertToCurried(f: (A, B) -> C): (A) -> (B) -> C = { a -> { b -> f(a, b) } }
 
 // 연습문제 3-11
-fun <A, B, C> changeOrderOfParam(f: (A) -> (B) -> C): (B) -> (A) -> C = { b -> { a -> f(a)(b) } }
+private fun <A, B, C> changeOrderOfParam(f: (A) -> (B) -> C): (B) -> (A) -> C = { b -> { a -> f(a)(b) } }
 
 fun main() {
     // 연습문제 3-1
