@@ -154,3 +154,20 @@ private sealed class Result<out A>: Serializable {
     // 연습문제 7-6
     fun exists(p: (A) -> Boolean): Boolean = map(p).getOrElse(false)
 }
+
+// 연습문제 7-12
+private fun <A, B> lift(f: (A) -> B): (Result<A>) -> Result<B> = { it.map(f) }
+
+// 연습문제 7-13
+private fun <A, B, C> lift2(f: (A) -> (B) -> C): (Result<A>) -> (Result<B>) -> Result<C> = { a ->
+    { b -> a.map(f).flatMap { b.map(it) } }
+}
+
+private fun <A, B, C, D> lift3(f: (A) -> (B) -> (C) -> D): (Result<A>) -> (Result<B>) -> (Result<C>) -> Result<D> = { a ->
+    { b -> {
+        c -> a.map(f).flatMap { b.map(it) }.flatMap { c.map(it) }
+    }}
+}
+
+// 연습문제 7-14
+private fun <A, B, C> map2(ra: Result<A>, rb: Result<B>, f: (A) -> (B) -> C): Result<C> = lift2(f)(ra)(rb)
